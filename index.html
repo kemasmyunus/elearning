@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container">
+        <div id="sidebar"></div>
+        <main>
+            <h2>Selamat Datang</h2>
+            <p>
+                Ini adalah halaman utama.  
+                Gunakan menu di sebelah kiri untuk memilih materi belajar.  
+            </p>
+        </main>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(id).innerHTML = data);
+        }
+
+        loadHTML("header", "header.html");
+        loadHTML("sidebar", "sidebar.html");
+        loadHTML("footer", "footer.html");
+    </script>
+</body>
+</html>

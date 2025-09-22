@@ -1,42 +1,56 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Belajar HTML - HTML</title>
-        <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container">
+        <div id="sidebar"></div>
+        <main>
+            <h1>HTML</h1>
+            <p>
+                HTML (<em>HyperText Markup Language</em>) adalah bahasa markup standar yang menjadi kerangka dasar untuk membangun sebuah website. 
+                HTML mendefinisikan struktur dan makna dari konten web, mulai dari teks, gambar, hingga tautan.
+            </p>
+            
+            <p class="note">
+                Bahasa markup atau bahasa markah adalah sistem yang menggunakan anotasi atau kode untuk menjelaskan struktur, format, atau makna dari sebuah dokumen teks. Dengan cara ini, perangkat lunak dapat memproses dan menyajikan informasi tersebut secara tepat kepada pengguna. Contoh bahasa markup yang umum digunakan adalah HTML dan Markdown.
+            </p>
+
+            <p>
+                Dalam praktiknya, HTML tersusun atas elemen-elemen yang memberikan instruksi kepada browser mengenai cara menampilkan konten. Elemen-elemen ini juga berfungsi memberi label pada bagian tertentu dari halaman, misalnya teks sebagai judul, paragraf, atau tautan.
+            </p>
+
+            <p>
+                HTML menggunakan markup berupa tag untuk membedakan elemen dari teks biasa. Tag ditulis di dalam tanda kurung sudut <code>&lt; &gt;</code> dan tidak bersifat peka huruf besar-kecil (case-insensitive), meskipun praktik terbaik adalah menuliskannya dalam huruf kecil. Beberapa contoh elemen HTML yang umum digunakan antara lain:
+            </p>
+            <ul>
+                <li><code>&lt;h1&gt;</code> untuk heading</li>
+                <li><code>&lt;p&gt;</code> untuk paragraf</li>
+                <li><code>&lt;a&gt;</code> untuk tautan</li>
+                <li><code>&lt;img&gt;</code> untuk gambar</li>
+                <li><code>&lt;ul&gt;</code> dan <code>&lt;li&gt;</code> untuk daftar</li>
+            </ul>
+        </main>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(id).innerHTML = data);
         }
-        h1 {
-            color: #2c3e50;
-        }
-        .note {
-            background-color: #fff3cd;
-            border-left: 5px solid #f1c40f;
-            padding: 10px;
-            margin: 15px 0;
-        }
-        </style>
-    </head>
-    <body>
-        <h1>
-            HTML
-        </h1>
-        <p>
-            HTML (HyperText Markup Language) adalah bahasa markup standar yang menjadi kerangka dasar untuk membangun sebuah website. HTML mendefinisikan struktur dan makna dari konten web, mulai dari teks, gambar, hingga tautan.
-        </p>
-        
-        <p class="note">
-            Bahasa markup atau bahasa markah adalah sistem yang menggunakan anotasi atau kode untuk menjelaskan struktur, format, atau makna dari sebuah dokumen teks. Dengan cara ini, perangkat lunak dapat memproses dan menyajikan informasi tersebut secara tepat kepada pengguna. Contoh bahasa markup yang umum digunakan adalah HTML dan Markdown.
-        </p>
-        <p>    
-            Dalam praktiknya, HTML tersusun atas elemen-elemen yang memberikan instruksi kepada browser mengenai cara menampilkan konten. Elemen-elemen ini juga berfungsi memberi label pada bagian tertentu dari halaman, misalnya teks sebagai judul, paragraf, atau tautan. 
-        </p>
-        <p>    
-            HTML menggunakan markup berupa tag untuk membedakan elemen dari teks biasa. Tag ditulis di dalam tanda kurung sudut &lt; &gt; dan tidak bersifat peka huruf besar-kecil (case-insensitive), meskipun praktik terbaik adalah menuliskannya dalam huruf kecil. Beberapa contoh elemen HTML yang umum digunakan antara lain &lt;h1&gt; untuk heading, &lt;p&gt; untuk paragraf, &lt;a&gt; untuk tautan, &lt;img&gt; untuk gambar, serta &lt;ul&gt; dan &lt;li&gt; untuk daftar.
-        </p>
-    </body>
+
+        loadHTML("header", "header.html");
+        loadHTML("sidebar", "sidebar.html");
+        loadHTML("footer", "footer.html");
+    </script>
+</body>
 </html>
-
-
